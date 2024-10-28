@@ -1,1 +1,34 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: Arial, sans-serif;
+}
 
+#gameCanvas {
+  display: block;
+  background: url('space_background.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.game-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff6b6b;
+  color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1000;
+  font-size: 24px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.game-icon:hover {
+  background-color: #ff4757;
+  transform: scale(1.1);
+}
