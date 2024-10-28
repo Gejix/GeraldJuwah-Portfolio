@@ -1808,3 +1808,11 @@ blockquote::before,.blockquote::before {
     .name{
         font-size: 30px;
     }
+
+#gameCanvas {
+  display: block;
+  background: url('space_background.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
