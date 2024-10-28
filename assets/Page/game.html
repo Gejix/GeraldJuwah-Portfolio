@@ -6,7 +6,7 @@
   <title>Space Shooting Game</title>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    /* Adding styles for the canvas */
+    /* Styles specifically for the game canvas */
     body {
       margin: 0;
       overflow: hidden;
@@ -18,26 +18,32 @@
       display: block;
       width: 100vw;
       height: 100vh;
-      background-color: black; /* Background color for visibility */
+      background-color: black; /* A black background to help visibility */
     }
   </style>
 </head>
 <body>
   <canvas id="gameCanvas"></canvas>
-  
-  <!-- Include the game JavaScript file -->
-  <script src="assets/js/game.js"></script>
-  
+
+  <!-- Include game JavaScript file -->
+  <script src="assets/js/game.js" defer></script>
+
   <script>
-    // Ensure the script runs after the DOM is fully loaded
+    // Ensure canvas resizes properly
     document.addEventListener('DOMContentLoaded', () => {
       const canvas = document.getElementById('gameCanvas');
-      const ctx = canvas.getContext('2d');
-
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
-      console.log("Game script loaded"); // Debugging log to ensure the script runs
+      // Log to make sure canvas size and script runs
+      console.log("Game canvas initialized");
+    });
+
+    // Listen for window resizing
+    window.addEventListener('resize', () => {
+      const canvas = document.getElementById('gameCanvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
   </script>
 </body>
