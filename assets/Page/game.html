@@ -4,10 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Space Shooting Game</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    /* Adding styles for the canvas */
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      font-family: Arial, sans-serif;
+    }
+
+    #gameCanvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background-color: black; /* Background color for visibility */
+    }
+  </style>
 </head>
 <body>
   <canvas id="gameCanvas"></canvas>
+  
+  <!-- Include the game JavaScript file -->
   <script src="assets/js/game.js"></script>
+  
+  <script>
+    // Ensure the script runs after the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('gameCanvas');
+      const ctx = canvas.getContext('2d');
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      console.log("Game script loaded"); // Debugging log to ensure the script runs
+    });
+  </script>
 </body>
 </html>
