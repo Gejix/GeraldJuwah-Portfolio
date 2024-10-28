@@ -14,22 +14,31 @@ body {
 }
 
 .game-icon {
-    position: fixed;
-    bottom: 40px;  /* Adjusted from 20px to give it more space from the bottom */
-    right: 40px;   /* Adjusted from 20px to give it more space and avoid potential content overlap */
-    background-color: #ff6b6b;
-    color: #fff;
-    border-radius: 50%;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    z-index: 1000;  /* Ensures it stays above other elements */
-    font-size: 24px;
-    transition: background-color 0.3s, transform 0.3s;
+  position: fixed;
+  bottom: 40px;  /* Adjusted for better spacing */
+  right: 40px;   /* Adjusted for better spacing */
+  background-color: #ff6b6b;
+  color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1000;  /* Ensure it stays above other elements */
+  font-size: 24px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .game-icon:hover {
-    background-color: #ff4757;
-    transform: scale(1.1);
+  background-color: #ff4757;
+  transform: scale(1.1);
 }
 
+/* Media query to adjust the game icon for smaller screens */
+@media (max-width: 768px) {
+  .game-icon {
+    bottom: 20px;  /* Closer to the bottom edge on smaller screens */
+    right: 20px;   /* Closer to the right edge on smaller screens */
+    font-size: 20px;  /* Reduce icon size for smaller screens */
+    padding: 10px;    /* Reduce padding for smaller screens */
+  }
+}
