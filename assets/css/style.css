@@ -1811,7 +1811,7 @@ blockquote::before,.blockquote::before {
 
 #gameCanvas {
   display: block;
-  background: url('assets/img/space_background.jpg') no-repeat center center;
+  background: url('../img/space_background.jpg') no-repeat center center;
   background-size: cover;
   width: 100vw;
   height: 100vh;
