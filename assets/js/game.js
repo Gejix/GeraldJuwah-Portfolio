@@ -5,6 +5,10 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// Load the ship image
+const shipImage = new Image();
+shipImage.src = '../img/fighter_jet.png'; // Update this path to where you saved the fighter jet image
+
 // Ship properties
 let ship = {
   x: canvas.width / 2 - 25,
@@ -21,8 +25,7 @@ let enemies = [];
 
 // Draw ship on canvas
 function drawShip() {
-  ctx.fillStyle = 'white';
-  ctx.fillRect(ship.x, ship.y, ship.width, ship.height);
+  ctx.drawImage(shipImage, ship.x, ship.y, ship.width, ship.height);
 }
 
 // Move ship left or right
@@ -156,5 +159,7 @@ function keyUp(e) {
 document.addEventListener('keydown', keyDown);
 document.addEventListener('keyup', keyUp);
 
-// Start the game loop
-update();
+// Ensure the ship image is loaded before starting the game loop
+shipImage.onload = () => {
+  update();
+};
