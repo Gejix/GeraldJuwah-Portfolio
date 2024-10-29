@@ -14,23 +14,54 @@
       font-family: Arial, sans-serif;
     }
 
-  #gameCanvas {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    background: url('../img/space_background.jpg') no-repeat center center;
-    background-size: cover;
-  }
+    #gameCanvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background: url('../img/space_background.jpg') no-repeat center center;
+      background-size: cover;
+    }
+
+    /* Back to Home button styles */
+    #back-home {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      z-index: 100; /* Ensure the back button is on top of the game canvas */
+    }
+
+    #back-home:hover {
+      background-color: #555;
+      color: #ffde29; /* Highlight color on hover */
+    }
+
+    #back-home i {
+      margin-right: 8px;
+    }
   </style>
 </head>
 <body>
+  <!-- Back to Home button -->
+  <a href="../index.html" id="back-home" title="Back to Home">
+    <i class="fas fa-arrow-left"></i> Home
+  </a>
+
+  <!-- Canvas for the game -->
   <canvas id="gameCanvas"></canvas>
 
   <!-- Include game JavaScript file -->
   <script src="../js/game.js" defer></script>
 
+  <!-- Ensure canvas resizes properly -->
   <script>
-    // Ensure canvas resizes properly
     document.addEventListener('DOMContentLoaded', () => {
       const canvas = document.getElementById('gameCanvas');
       canvas.width = window.innerWidth;
